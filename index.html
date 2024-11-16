@@ -17,6 +17,7 @@
             color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
         }
 
         .container {
@@ -110,6 +111,42 @@
             }
         }
 
+        .floating-meat {
+            position: absolute;
+            font-size: 3rem;
+            animation: floatMeat 3s ease-in-out infinite;
+        }
+
+        .floating-meat:nth-child(1) {
+            top: 10%;
+            left: 30%;
+            animation-delay: 0.5s;
+        }
+
+        .floating-meat:nth-child(2) {
+            top: 25%;
+            left: 50%;
+            animation-delay: 1s;
+        }
+
+        .floating-meat:nth-child(3) {
+            top: 40%;
+            left: 70%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floatMeat {
+            0% {
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-20px) scale(1.2);
+            }
+            100% {
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+        }
+
         footer {
             font-size: 1.1rem;
             color: #bdc3c7;
@@ -135,9 +172,31 @@
                 transform: translateY(0);
             }
         }
+
+        /* Efeito de brilho no fundo */
+        .glowing-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 94, 77, 0.7), rgba(252, 163, 48, 0.7));
+            animation: glow 1.5s infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes glow {
+            0% {
+                filter: brightness(1.2);
+            }
+            100% {
+                filter: brightness(1.5);
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="glowing-background"></div>
     <div class="container">
         <header>
             <h1>Festa do Rodrigo - Churrasco & Diversão!</h1>
@@ -148,11 +207,17 @@
             <img src="rodrigo.jpg" alt="Rodrigo" class="foto">
             <div class="message">
                 <p>Fala galera! 🎉</p>
-                <p>Eu (Rodrigo) estou fazendo aniversário e quero celebrar com todo mundo em grande estilo. Vai rolar um CHURRASCO top, com muito carne, cerveja e diversão! 🍖🍺</p>
-                <p>Começa às 21h e vai até quando der, então já sabe, chega com energia porque a festa vai ser longa e animada!</p>
-                <p>E não esquece de trazer as bebidas de sua preferência 🍻🥤 (me avisa se você for trazer algo diferente, ok?).</p>
-                <p>Nos vemos lá para fazer aquele churras e curtir a noite! 😎🔥</p>
+                <p>Eu (Rodrigo) estou fazendo aniversário e quero celebrar com todo mundo em grande estilo. Vai rolar um CHURRASCO top, com muita carne, cerveja e diversão! 🍖🍺</p>
+                <p>O evento começa às 21h e vai até quando der, então já sabe, chega com energia porque a festa vai ser longa e animada! 😎</p>
+                <p>O endereço da festa é: <strong>Rua Domenico Lanzetti, 96 - Bairro Parelheiros, Cidade SP</strong></p>
+                <p>E não esquece de trazer as bebidas de sua preferência 🍻🥤.</p>
+                <p>Nos vemos lá para fazer aquele churras e curtir a noite! 🔥🎉</p>
             </div>
+
+            <!-- Carnes flutuantes -->
+            <div class="floating-meat">🍖</div>
+            <div class="floating-meat">🍖</div>
+            <div class="floating-meat">🍖</div>
 
             <div class="churrasco-decor">
                 <p>Vamos fazer uma festa daquelas! 🎉🔥</p>
